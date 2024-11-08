@@ -35,14 +35,18 @@
         <h2>Виберіть комплектацію свого артбоксу</h2>
 
         <form id="artboxForm" onsubmit="return validateForm(event)">
-          <p>
-            До кожного набору входять два базові кольори - білий барвник та
-            білий перламутровий сухий пігмент.
-          </p>
+          <div class="base-colors__wrapper">
+            <p>
+              До кожного набору входять два базові кольори - білий барвник та
+              білий перламутровий сухий пігмент.
+            </p>
 
-          <div class="color-wrapper color-white-base"></div>
-          <div class="color-wrapper color-white-pearl"></div>
-
+            <img
+              class="base-colors"
+              src="./pictures/base-colors.png"
+              alt="барвники"
+            />
+          </div>
           <fieldset id="colorGroup">
             <h3>Оберіть додаткові барвники:</h3>
             <div class="colors-wrapper">
@@ -131,7 +135,7 @@
           </fieldset>
 
           <fieldset id="gloveSizeGroup">
-            <h3>Оберіть розмір рукавиць</h3>
+            <h3>Оберіть розмір рукавиць:</h3>
             <label>
               <input type="radio" name="glove_size" value="S" />
               <p>S</p>
