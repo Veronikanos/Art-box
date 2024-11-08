@@ -10,6 +10,11 @@ ol[class] {
   padding: 0;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 body,
 h1,
 h2,
@@ -27,6 +32,13 @@ dd {
   margin: 0;
 }
 
+h2 {
+  text-transform: uppercase;
+  line-height: 1;
+  padding-bottom: 20px;
+  font-size: 22px;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -37,8 +49,8 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #1c2b51;
-  color: white;
+  background-color: #ffffff;
+  color: #1c2b51;
 }
 
 ul,
@@ -67,8 +79,10 @@ select {
 }
 
 .hero {
-  height: 500px;
+  height: 550px;
   position: relative;
+  background-color: #1c2b51;
+  z-index: -2;
 }
 
 .hero::before {
@@ -106,7 +120,7 @@ select {
   text-transform: uppercase;
   font-size: 36px;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 75px;
   line-height: 1;
 }
 .title span {
@@ -123,6 +137,7 @@ select {
   padding-top: 30px;
   font-size: 14px;
   text-align: center;
+  color: white;
 }
 .art-box-img {
   width: 300px;
@@ -135,14 +150,15 @@ section {
 }
 
 .main-section {
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
 form {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  /* margin: 20px; */
+  background-color: white;
   /* 
   @media (min-width: 768px) {
     max-width: 400px;
@@ -150,7 +166,8 @@ form {
 }
 
 input[type="text"],
-input[type="tel"] {
+input[type="tel"],
+textarea {
   width: 100%;
   padding: 0.8rem;
   margin: 0.5rem 0;
@@ -162,9 +179,10 @@ input[type="tel"] {
 }
 
 input[type="text"]:focus,
-input[type="tel"]:focus {
+input[type="tel"]:focus,
+textarea {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #1c2b51;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
 }
 
@@ -198,17 +216,10 @@ fieldset label {
   width: 50%;
 } */
 
-#colorGroup label {
-  /* max-width: 50%; */
-  /* @media (min-width: 768px) {
-    width: 50%;
-  } */
-}
-
 .colors-wrapper {
   display: flex;
   flex-flow: wrap;
-  gap: 5px;
+  gap: 4px;
   justify-content: center;
 }
 
@@ -219,7 +230,7 @@ fieldset label {
 /* Стилі для колірного індикатора */
 .color-wrapper {
   display: inline-block;
-  width: 60px;
+  width: 100%;
   height: 30px;
   /* border-radius: 50%; */
   /* margin-right: 0.5rem; */
@@ -308,6 +319,13 @@ fieldset label {
 
 .color-description-text {
   display: block;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+#colorGroup label {
+  display: grid;
+  width: calc(50% - 2px);
 }
 
 /* Стилі для вибраного елемента */
@@ -324,7 +342,7 @@ button[type="submit"] {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
-  background-color: #3b82f6;
+  background-color: #1c2b51;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -334,5 +352,28 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #2563eb;
+  background-color: #38549b;
+}
+
+footer {
+  background-color: #1c2b51;
+  height: 550px;
+  position: relative;
+  background-color: #1c2b51;
+  z-index: -2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./pictures/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
 }

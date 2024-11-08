@@ -36,7 +36,7 @@
 
         <form id="artboxForm" onsubmit="return validateForm(event)">
           <p>
-            До кожного арт-боксу входять два базові кольори - білий барвник та
+            До кожного набору входять два базові кольори - білий барвник та
             білий перламутровий сухий пігмент.
           </p>
 
@@ -44,12 +44,12 @@
           <div class="color-wrapper color-white-pearl"></div>
 
           <fieldset id="colorGroup">
-            <legend>Оберіть додаткові барвники:</legend>
+            <h3>Оберіть додаткові барвники:</h3>
             <div class="colors-wrapper">
               <label>
                 <input type="radio" name="color" value="Бірюзовий океан" />
                 <div class="">
-                  <p class="color-description-text">1. Бірюзовий океан</p>
+                  <p class="color-description-text">Бірюзовий океан</p>
                   <div class="color-wrapper color-ocean-dark"></div>
                   <div class="color-wrapper color-ocean-light"></div>
                 </div>
@@ -57,7 +57,7 @@
               <label>
                 <input type="radio" name="color" value="Бежевий латте" />
                 <div class="">
-                  <p class="color-description-text">2. Бежевий латте</p>
+                  <p class="color-description-text">Бежевий латте</p>
                   <div class="color-wrapper color-beige-dark"></div>
                   <div class="color-wrapper color-beige-light"></div>
                 </div>
@@ -65,7 +65,7 @@
               <label>
                 <input type="radio" name="color" value="Фіолет-аметист" />
                 <div class="">
-                  <p class="color-description-text">3. Фіолет-аметист</p>
+                  <p class="color-description-text">Фіолет-аметист</p>
                   <div class="color-wrapper color-violet-dark"></div>
                   <div class="color-wrapper color-violet-light"></div>
                 </div>
@@ -73,7 +73,7 @@
               <label>
                 <input type="radio" name="color" value="Рожевий-фуксія" />
                 <div class="">
-                  <p class="color-description-text">4. Рожевий-фуксія</p>
+                  <p class="color-description-text">Рожевий-фуксія</p>
                   <div class="color-wrapper color-pink-light"></div>
                   <div class="color-wrapper color-pink-dark"></div>
                 </div>
@@ -81,7 +81,7 @@
               <label>
                 <input type="radio" name="color" value="Норвежський ліс" />
                 <div class="">
-                  <p class="color-description-text">5. Норвежський ліс</p>
+                  <p class="color-description-text">Норвежський ліс</p>
                   <div class="color-wrapper color-green-dark"></div>
                   <div class="color-wrapper color-green-light"></div>
                 </div>
@@ -89,7 +89,7 @@
               <label>
                 <input type="radio" name="color" value="Пастельний" />
                 <div class="">
-                  <p class="color-description-text">6. Пастельний</p>
+                  <p class="color-description-text">Пастельний</p>
                   <div class="color-wrapper color-pastel-dark"></div>
                   <div class="color-wrapper color-pastel-light"></div>
                 </div>
@@ -97,7 +97,7 @@
               <label>
                 <input type="radio" name="color" value="Червоно-чорний" />
                 <div class="">
-                  <p class="color-description-text">7. Червоно-чорний</p>
+                  <p class="color-description-text">Червоно-чорний</p>
                   <div class="color-wrapper color-red"></div>
                   <div class="color-wrapper color-black"></div>
                 </div>
@@ -105,15 +105,15 @@
               <label>
                 <input type="radio" name="color" value="Патріотичний" />
                 <div class="">
-                  <p class="color-description-text">8. Патріотичний</p>
-                  <div class="color-wrapper color-patriotic-yellow"></div>
+                  <p class="color-description-text">Патріотичний</p>
                   <div class="color-wrapper color-patriotic-blue"></div>
+                  <div class="color-wrapper color-patriotic-yellow"></div>
                 </div>
               </label>
               <label>
                 <input type="radio" name="color" value="Пастельний" />
                 <div class="">
-                  <p class="color-description-text">9. Апельсин-інжир</p>
+                  <p class="color-description-text">Апельсин-інжир</p>
                   <div class="color-wrapper color-orange"></div>
                   <div class="color-wrapper color-fig"></div>
                 </div>
@@ -122,7 +122,7 @@
               <label>
                 <input type="radio" name="color" value="Пастельний" />
                 <div class="">
-                  <p class="color-description-text">10. Випадкові кольори</p>
+                  <p class="color-description-text">Випадкові кольори</p>
                   <!-- <div class="color-wrapper color-random-dark"></div>
             <div class="color-wrapper color-random-light"></div> -->
                 </div>
@@ -131,7 +131,7 @@
           </fieldset>
 
           <fieldset id="gloveSizeGroup">
-            <legend>Оберіть розмір рукавиць</legend>
+            <h3>Оберіть розмір рукавиць</h3>
             <label>
               <input type="radio" name="glove_size" value="S" />
               <p>S</p>
@@ -147,7 +147,7 @@
           </fieldset>
 
           <fieldset id="gloveSizeGroup">
-            <legend>Оберіть вид сухоцвітів:</legend>
+            <h3>Оберіть вид сухоцвітів:</h3>
             <label>
               <input type="radio" name="flower-type" value="Гортензія" />
               <p>Гортензія</p>
@@ -175,15 +175,25 @@
               pattern="^\+?[0-9]{10,15}$"
             />
           </div>
+
+          <div>
+            <input
+              type="text"
+              id="address"
+              placeholder="Адреса для доставки, відділення Нової Пошти"
+              required
+            />
+          </div>
           <div>
             <textarea
               id="comment"
               rows="4"
+              maxlength="250"
               placeholder="Додаткові побажання або коментар"
             ></textarea>
           </div>
 
-          <button type="submit">Зберегти вибір</button>
+          <button type="submit">Замовити свій EPOXY ART BOX</button>
         </form>
       </section>
     </main>
