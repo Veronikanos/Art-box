@@ -1,0 +1,338 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1c2b51;
+  color: white;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.hero {
+  height: 500px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./pictures/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.logo {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  /* height: 20px; */
+  /* z-index: 2; */
+  /* padding: 10px; */
+}
+
+/* nav ul {
+  display: flex;
+} */
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 100px;
+  line-height: 1;
+}
+.title span {
+  display: block;
+  font-size: 22px;
+  text-align: center;
+}
+
+.title-description {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+.art-box-img {
+  width: 300px;
+  margin: 0 auto;
+}
+
+section {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-section {
+  padding-top: 150px;
+}
+
+form {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  /* 
+  @media (min-width: 768px) {
+    max-width: 400px;
+  } */
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  /* margin: 0.3rem; */
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s,
+    transform 0.2s;
+}
+
+/* .image-wrapper {
+  width: 200px;
+  background-image: url(./pictures/бокс3.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+/* .collage {
+  width: 50%;
+} */
+
+#colorGroup label {
+  /* max-width: 50%; */
+  /* @media (min-width: 768px) {
+    width: 50%;
+  } */
+}
+
+.colors-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.color-description-text {
+  font-size: smaller;
+}
+
+/* Стилі для колірного індикатора */
+.color-wrapper {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  /* border-radius: 50%; */
+  /* margin-right: 0.5rem; */
+}
+
+.color-ocean-dark {
+  background-color: #146782;
+}
+
+.color-ocean-light {
+  background-color: #2db2bd;
+}
+
+.color-beige-dark {
+  background-color: #a87c54;
+}
+
+.color-beige-light {
+  background-color: #d8c897;
+}
+
+.color-violet-dark {
+  background-color: #5d3b8c;
+}
+
+.color-violet-light {
+  background-color: #743c72;
+}
+
+.color-pink-dark {
+  background-color: #ae3f66;
+}
+
+.color-pink-light {
+  background-color: #e194ad;
+}
+
+.color-green-dark {
+  background-color: #1b662e;
+}
+
+.color-green-light {
+  background-color: #48665e;
+}
+
+.color-pastel-dark {
+  background-color: #d6b0b0;
+}
+
+.color-pastel-light {
+  background-color: #8eb6cd;
+}
+
+.color-red {
+  background-color: #af2f1e;
+}
+
+.color-black {
+  background-color: #000000;
+}
+
+.color-patriotic-yellow {
+  background-color: #f6de05;
+}
+
+.color-patriotic-blue {
+  background-color: #196edd;
+}
+
+.color-orange {
+  background-color: #f18e27;
+}
+
+.color-fig {
+  background-color: #442a3e;
+}
+
+.color-white-base {
+  background-color: #ffffff;
+  border: 1px black solid;
+}
+
+.color-white-pearl {
+  background-color: #442a3e;
+}
+
+.color-description-text {
+  display: block;
+}
+
+/* Стилі для вибраного елемента */
+.selected {
+  border-color: #3b82f6;
+  background-color: #e0f2fe;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  font-weight: bold;
+  color: #1d4ed8;
+  transform: scale(1.02);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #2563eb;
+}
