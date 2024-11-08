@@ -159,11 +159,13 @@ section {
 
 .base-colors__wrapper {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 6px;
 }
 
 .base-colors {
-  width: 120px;
+  width: 200px;
+  height: 100%;
 }
 
 form {
