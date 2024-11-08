@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Функція для показу модального вікна з повідомленням
+  function showModal(message) {
+    const modal = document.getElementById("modal");
+    const modalMessage = document.getElementById("modal-message");
+    modalMessage.innerHTML = message; // Додаємо HTML для форматованого тексту
+    modal.style.display = "block";
+  }
+
+  // Закриття модального вікна
+  document.querySelector(".close").onclick = function () {
+    document.getElementById("modal").style.display = "none";
+  };
+
+  // Закриття модального вікна при кліку поза вікном
+  window.onclick = function (event) {
+    const modal = document.getElementById("modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
   document
     .getElementById("artboxForm")
     .addEventListener("submit", function (event) {
@@ -19,13 +40,28 @@ document.addEventListener("DOMContentLoaded", function () {
         'input[name="flower-type"]:checked'
       )?.value;
 
-      // Перевірка обов'язкових полів
-      if (!name || !phone || !address || !color || !gloveSize || !flowerType) {
-        alert("Будь ласка, заповніть всі обов'язкові поля.");
-        return;
+      // Перевірка на заповненість обов'язкових полів
+      let missingFields = [];
+      if (!name) missingFields.push("Ім'я");
+      if (!phone) missingFields.push("Телефон");
+      if (!address) missingFields.push("Адреса для доставки");
+      if (!color) missingFields.push("Колір барвника");
+      if (!gloveSize) missingFields.push("Розмір рукавиць");
+      if (!flowerType) missingFields.push("Вид сухоцвітів");
+
+      // Якщо є пропущені обов'язкові поля
+      if (missingFields.length > 0) {
+        let errorMessage =
+          "<p>Будь ласка, заповніть всі обов'язкові поля:</p><ul>";
+        missingFields.forEach((field) => {
+          errorMessage += `<li>${field}</li>`;
+        });
+        errorMessage += "</ul>";
+        showModal(errorMessage);
+        return; // Не очищаємо форму та дозволяємо користувачу дозаповнити
       }
 
-      // Формуємо текст повідомлення
+      // Якщо всі обов'язкові поля заповнено, формуємо повідомлення для відправки
       const message = `
       🔹 Ім'я: ${name}
       🔹 Телефон: ${phone}
@@ -36,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       🔹 Вид сухоцвітів: ${flowerType}
     `;
 
-      // Параметри для відправки повідомлення
       const botToken = "7354150090:AAHBwvwriUroFKv6unHt6tO3MtIz83uhDHI";
       const chatId = "-1002158696597";
       const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -45,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         text: message,
       };
 
-      // Відправка запиту до Telegram API
       fetch(url, {
         method: "POST",
         headers: {
@@ -55,36 +89,30 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((response) => {
           if (response.ok) {
-            alert("Ваше замовлення успішно відправлено!");
-            document.getElementById("artboxForm").reset(); // Очищення форми після успішної відправки
+            const successMessage = `
+            <p>${name}, Ваше замовлення успішно відправлено! Ми зв'яжемось з вами найближчим часом.</p>
+           <br>
+            <p><strong>Вибрані варіанти:</strong></p>
+            <ul>
+              <li>Колір барвника: ${color}</li>
+              <li>Розмір рукавиць: ${gloveSize}</li>
+              <li>Вид сухоцвітів: ${flowerType}</li>
+            </ul>
+            <p class="additional-info">Ваше замовлення буде скомплектовано з обраним вами наповненням.</p>
+          `;
+            showModal(successMessage);
+            document.getElementById("artboxForm").reset();
           } else {
-            alert(
+            showModal(
               "Виникла помилка при відправці замовлення. Спробуйте ще раз."
             );
           }
         })
         .catch((error) => {
           console.error("Помилка:", error);
-          alert(
+          showModal(
             "Неможливо відправити замовлення. Перевірте підключення до інтернету."
           );
         });
     });
-
-  // Функція для додавання класу "selected" до вибраного label
-  document.querySelectorAll("fieldset").forEach((fieldset) => {
-    const radioButtons = fieldset.querySelectorAll('input[type="radio"]');
-
-    radioButtons.forEach((radio) => {
-      radio.addEventListener("change", () => {
-        // Видаляємо клас "selected" з усіх елементів у поточному fieldset
-        fieldset.querySelectorAll("label").forEach((label) => {
-          label.classList.remove("selected");
-        });
-
-        // Додаємо клас "selected" до обраного елемента
-        radio.parentElement.classList.add("selected");
-      });
-    });
-  });
 });

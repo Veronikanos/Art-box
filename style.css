@@ -15,6 +15,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 body,
 h1,
 h2,
@@ -219,18 +223,6 @@ fieldset label {
     transform 0.2s;
 }
 
-/* .image-wrapper {
-  width: 200px;
-  background-image: url(./pictures/бокс3.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
-
-/* .collage {
-  width: 50%;
-} */
-
 .colors-wrapper {
   display: flex;
   flex-flow: wrap;
@@ -376,4 +368,129 @@ footer {
   position: relative;
   /* background-color: #1c2b51; */
   z-index: -2;
+}
+
+/* Базовий стиль для затемнення фону */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-links {
+  margin-top: 30px;
+}
+
+.contact-links p {
+  font-weight: bold;
+}
+
+.social-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #1c2b51;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.social-button:hover {
+  background-color: #283e75;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.modal-message {
+  padding-top: 20px;
+}
+
+/* Стилізація заголовка */
+#modal-message p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+/* Стиль для списку в модальному вікні */
+#modal-message ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+#modal-message ul li {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+/* Іконка для кожного елемента списку */
+#modal-message ul li:before {
+  content: "✔"; /* або можна використовувати іншу іконку */
+  color: #4caf50;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Додатковий стиль для основного тексту */
+#modal-message p strong {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Стиль для додаткових абзаців */
+#modal-message p.additional-info {
+  color: #666;
+  font-size: 14px;
+  margin-top: 16px;
 }
