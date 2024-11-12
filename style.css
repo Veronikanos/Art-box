@@ -223,7 +223,7 @@ fieldset label {
     transform 0.2s;
 }
 
-.colors-wrapper {
+.table-wrapper {
   display: flex;
   flex-flow: wrap;
   gap: 4px;
@@ -330,7 +330,8 @@ fieldset label {
   padding-top: 4px;
 }
 
-#colorGroup label {
+#colorGroup label,
+#flowersGroup label {
   display: grid;
   width: calc(50% - 2px);
 }
