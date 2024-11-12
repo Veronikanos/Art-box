@@ -330,10 +330,26 @@ fieldset label {
   padding-top: 4px;
 }
 
-#colorGroup label,
-#flowersGroup label {
+#colorGroup label {
   display: grid;
   width: calc(50% - 2px);
+}
+
+#flowersGroup label {
+  width: 100%;
+  display: grid;
+  @media (min-width: 420px) {
+    width: calc(50% - 2px);
+  }
+}
+
+#flowersGroup img {
+  margin: 0 auto;
+}
+
+.disclaimer {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 /* Стилі для вибраного елемента */
@@ -365,10 +381,16 @@ button[type="submit"]:hover {
 
 footer {
   background-color: #1c2b51;
-  height: 550px;
+  height: 150px;
   position: relative;
   /* background-color: #1c2b51; */
   z-index: -2;
+  text-align: center;
+}
+
+footer .contact-links {
+  color: white;
+  padding-top: 20px;
 }
 
 /* Базовий стиль для затемнення фону */
