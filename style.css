@@ -517,3 +517,15 @@ footer .contact-links {
   font-size: 14px;
   margin-top: 16px;
 }
+label:has(input[type="radio"]:checked) {
+  border-color: #3b82f6;
+  background-color: #e0f2fe;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  font-weight: bold;
+  color: #1d4ed8;
+  transform: scale(1.02);
+}
+
+label:hover {
+  background-color: #f1f1f1;
+}
