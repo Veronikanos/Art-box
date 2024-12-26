@@ -1,306 +1,575 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <title>Epoxy Art Box</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Mulish:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" as="image" href="img/box-into.webp">
+    <link rel="stylesheet" href="css/constructor.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
   </head>
   <body>
-    <header>
-      <nav>
-        <ul></ul>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <a class="logo" href="#">
-          <img src="./pictures/logo.png" alt="logo" />
-        </a>
-        <!-- <div class="image-wrapper"></div> -->
+    <main id="mainbox">
+      <section class="header-main">
+        <img
+          class="header-logo"
+          src="./img/logo.webp"
+          alt="Logo"
+          width="824"
+          height="294"
+        />
 
-        <h1 class="title">КОНСТРУКТОР<span>наборів для творчості</span></h1>
-        <p class="title-description">
-          персоналізуйте арт-бокс, обравши кольори та сухоцвіти які вам
-          найбільше до вподоби!
-        </p>
-        <img class="art-box-img" src="./pictures/art-box.png" alt="art-box" />
+        <!-- мобільне меню -->
+        <nav class="header__menu">
+          <ul class="menu__list menu__list-mobile">
+            <li class="menu__list-link"><a href="#about">Про артбокс</a></li>
+            <li class="menu__list-link"><a href="#for">Кому підійде?</a></li>
+            <li class="menu__list-link"><a href="#into">Що всередині?</a></li>
+            <li class="menu__list-link"><a href="#reviews">Натхнення</a></li>
+            <li class="menu__list-link"> <button type="button" class="btn-order-js btn-menu" >
+              Замовити
+            </button></li>
+            <li class="menu__list-link"><a href="#contacts">Контакти</a></li>
+          </ul>
+        </nav>
+        <!-- //мобільне меню -->
+        <button
+          type="button"
+          class="burger-main header-mobile-menu-btn js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <ul class="burger__inner">
+            <li class="burger__line"></li>
+            <li class="burger__line"></li>
+            <li class="burger__line"></li>
+          </ul>
+        </button>
+        <div class="header-hero">
+        <div class="header-wrap">
+          
+          <h2 class="title-header">Арт-бокс</h2>
+          <p class="text-header">Набір для творчості з епоксидною смолою</p>
+          <div class="btns-wrap">
+            <button type="button" class="btn-order btn-order-js" >
+              Замовити
+            </button>
+            <a href="#about" class="btn-header">Детальніше</a>
+          </div>
+          
+        </div>
+        <img
+            class="img-header"
+            src="./img/collage-presentation.png"
+            alt="Box with products"
+            width="670"
+            height="1176"
+          />
+      </div>
       </section>
-      <section class="main-section">
-        <!-- <img class="collage" src="./pictures/бокс3.png" alt="" /> -->
-        <h2>Виберіть комплектацію свого артбоксу</h2>
+      <section id="about" class="about">
+        <div class="about-inner">
+          <h2 class="title-main-about">Що таке арт-бокс?</h2>
+          <div class="about-description">
+            <h3 class="subtitle-main">НАБІР ДЛЯ ТВОРЧОСТІ</h3>
 
-        <form id="artboxForm" onsubmit="return validateForm(event)">
-          <div class="base-colors__wrapper">
-            <p>
-              До кожного набору входять два базові кольори - білий барвник та
-              білий перламутровий сухий пігмент.
+            <p class="text-main">
+              з матеріалів і інструментів, щоб створити свій перший декор із
+              епоксидної смоли
             </p>
+            <h3 class="subtitle-main">Ідеально підходить</h3>
+            <p class="text-main">
+              для новачків і тих, хто шукає нове захоплення
+            </p>
+          </div>
+        </div>
+        <img
+          class="img-about"
+          src="./img/image-about-mob.png"
+          alt="Box with products"
+          width="600"
+          height="378"
+        />
+      </section>
+      <section id="for" class="for-whom">
+        <div class="for-whom-inner">
+          <h2 class="title-main-for-whom">Кому підходить?</h2>
 
+          <div class="text-wrap">
             <img
-              class="base-colors"
-              src="./pictures/base-colors.png"
-              alt="барвники"
+              class="icon-for"
+              src="./img/icon-for1.png"
+              alt="Icon woman"
+              width="44"
+              height="44"
             />
+            <p class="text-main">арт-бокси рекомендуємо дорослим</p>
           </div>
-          <fieldset id="colorGroup">
-            <h3>Оберіть додаткові барвники:</h3>
-            <p class="disclaimer">
-              *Просимо звернути увагу: колір може відрізнятись в залежності від
-              освітлення та налаштувань екрану Вашого пристрою
+          <div class="text-wrap">
+            <img
+              class="icon-for"
+              src="./img/icon-for2.png"
+              alt="Icon mask"
+              width="44"
+              height="44"
+            />
+            <p class="text-main">
+              також у наборі є захисні засоби й детальна інструкція для вашої
+              безпеки
             </p>
-            <div class="table-wrapper">
-              <label>
-                <input type="radio" name="color" value="Бірюзовий океан" />
-                <div class="">
-                  <p class="color-description-text">Бірюзовий океан</p>
-                  <div class="color-wrapper color-ocean-dark"></div>
-                  <div class="color-wrapper color-ocean-light"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Бежевий латте" />
-                <div class="">
-                  <p class="color-description-text">Бежевий латте</p>
-                  <div class="color-wrapper color-beige-dark"></div>
-                  <div class="color-wrapper color-beige-light"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Фіолет-аметист" />
-                <div class="">
-                  <p class="color-description-text">Фіолет-аметист</p>
-                  <div class="color-wrapper color-violet-dark"></div>
-                  <div class="color-wrapper color-violet-light"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Рожевий-фуксія" />
-                <div class="">
-                  <p class="color-description-text">Рожевий-фуксія</p>
-                  <div class="color-wrapper color-pink-light"></div>
-                  <div class="color-wrapper color-pink-dark"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Норвежський ліс" />
-                <div class="">
-                  <p class="color-description-text">Норвежський ліс</p>
-                  <div class="color-wrapper color-green-dark"></div>
-                  <div class="color-wrapper color-green-light"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Пастельний" />
-                <div class="">
-                  <p class="color-description-text">Пастельний</p>
-                  <div class="color-wrapper color-pastel-dark"></div>
-                  <div class="color-wrapper color-pastel-light"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Червоно-чорний" />
-                <div class="">
-                  <p class="color-description-text">Червоно-чорний</p>
-                  <div class="color-wrapper color-red"></div>
-                  <div class="color-wrapper color-black"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Патріотичний" />
-                <div class="">
-                  <p class="color-description-text">Патріотичний</p>
-                  <div class="color-wrapper color-patriotic-blue"></div>
-                  <div class="color-wrapper color-patriotic-yellow"></div>
-                </div>
-              </label>
-              <label>
-                <input type="radio" name="color" value="Пастельний" />
-                <div class="">
-                  <p class="color-description-text">Апельсин-інжир</p>
-                  <div class="color-wrapper color-orange"></div>
-                  <div class="color-wrapper color-fig"></div>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset id="gloveSizeGroup">
-            <h3>Оберіть розмір рукавиць:</h3>
-            <label>
-              <input type="radio" name="glove_size" value="S" />
-              <p>S</p>
-            </label>
-            <label>
-              <input type="radio" name="glove_size" value="M" />
-              <p>M</p>
-            </label>
-            <label>
-              <input type="radio" name="glove_size" value="L" />
-              <p>L</p>
-            </label>
-            <label>
-              <input type="radio" name="glove_size" value="XL" />
-              <p>XL</p>
-            </label>
-          </fieldset>
-
-          <fieldset id="flowersGroup">
-            <h3>Оберіть вид сухоцвітів:</h3>
-            <p class="disclaimer">
-              *До всіх наборів входять квіточки зеленої гортензії
+          </div>
+          <img
+            class="img-for"
+            src="./img/video-for.png"
+            alt="Woman"
+            width="600"
+            height="378"
+          />
+          <h3 class="subtitle-main">Не рекомендується</h3>
+          <p class="text-main">
+            Дітям, вагітним жінкам і людям із захворюваннями органів дихання
+            працювати з епоксидною смолою
+          </p>
+        </div>
+      </section>
+      <section class="presentation">
+        <div class="presentation-inner">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jVyZQMhkSpg?si=W-PEImS077Uyf6PZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section id="into" class="composition">
+        <div class="composition-inner">
+          
+            <h3 class="composition-title">
+              Відкрийте коробку і творіть!
+            </h3>
+            <p class="text-main">
+              Не потрібно нічого купувати або використовувати додатково
             </p>
-            <div class="table-wrapper">
-              <label>
-                <input type="radio" name="flower-type" value="Блакитні" />
-                <img src="./pictures/1.png" alt="blue flowers" />
-                <p>Блакитні</p>
-              </label>
-              <label>
-                <input type="radio" name="flower-type" value="Фіолетові" />
-                <img src="./pictures/2.png" alt="violet flowers" />
-                <p>Фіолетові</p>
-              </label>
-              <label>
-                <input type="radio" name="flower-type" value="Віоли" />
-                <img src="./pictures/3.png" alt="viola mix" />
-                <p>Мікс віол</p>
-              </label>
-              <label>
-                <input type="radio" name="flower-type" value="Зелені" />
-                <img src="./pictures/4.png" alt="green flowers" />
-                <p>Зелені</p>
-              </label>
-              <label>
-                <input type="radio" name="flower-type" value="Рожево-бежеві" />
-                <img src="./pictures/5.png" alt="pink-beige flowers" />
-                <p>Рожево-бежеві</p>
-              </label>
-            </div>
-          </fieldset>
-
-          <div>
-            <input type="text" id="name" placeholder="Ваше ім'я" required />
+            <h3 class="subtitle-main">Що входить до складу?</h3>
+            <ul class="composition-list">
+              <li class="composition-item">
+                <p class="number">01</p>
+                <p class="item-descr">Молд для таці 9*18 см</p>
+              </li>
+              <li class="composition-item">
+                <p class="number">02</p>
+                <p class="item-descr">Епоксидна смола</p>
+              </li>
+              <li class="composition-item">
+                <p class="number">03</p>
+                <p class="item-descr">
+                  Захисні засоби: рукавиці, фартух, респіратор
+                </p>
+              </li>
+              <li class="composition-item">
+                <p class="number">04</p>
+                <p class="item-descr">
+                  Набір барвників, який можна обрати за кольорами
+                </p>
+              </li>
+              <li class="composition-item">
+                <p class="number">05</p>
+                <p class="item-descr">Сухоцвіти на вибір</p>
+              </li>
+              <li class="composition-item">
+                <p class="number">06</p>
+                <p class="item-descr">
+                  Детальні навчальні відео та паперова інструкція
+                </p>
+              </li>
+              <li class="composition-item">
+                <p class="number">07</p>
+                <p class="item-descr">
+                  А також додаткові дрібнички для організації творчого
+                  процесу та декорування виробу
+                </p>
+              </li>
+            </ul>
           </div>
-
-          <div>
-            <input
-              type="tel"
-              id="phone"
-              placeholder="Ваш номер телефону"
-              required
-            />
+    
+      </section>
+      <section id="order" class="order">
+        <div class="order-wrap">
+  
+            <button type="button" class="btn-order btn-order-js btn-order-xl" >
+              Обрати свій Арт-бокс
+            </button>
+        </div>
+      </section>
+      <section id="reviews" class="reviews">
+        <h2 class="title-main-for-whom">Роботи інших для вашого натхнення</h2>
+        <ul class="reviews-list">
+          <li class="reviews-item"><img src="./img/rev1.jpg" alt="Art" width="224" height="336"></li>
+          <li class="reviews-item"><img src="./img/rev2.jpg" alt="Art" width="224" height="336"></li>
+          <li class="reviews-item"><img src="./img/rev3.jpg" alt="Art" width="224" height="336"></li>
+          <li class="reviews-item"><img src="./img/rev4.jpg" alt="Art" width="224" height="336"></li>
+          
+          </ul>
+      </section>
+      <section id="contacts" class="footer-main">
+        <div class="footer-inner">
+          <div class="contacts-footer">
+            <p class="contacts-text">Слідкуйте за нами в соцмережах:</p>
+            <ul class="contacts-footer-list">
+              <li class="cotacts-footer-item">
+                <a
+                  class="social-icon"
+                  href="https://www.instagram.com/unika.art"
+                  ><img
+                    src="./img/instagram.png"
+                    alt="Instagram"
+                    width="35"
+                    height="35"
+                /></a>
+              </li>
+              <li class="cotacts-footer-item">
+                <a
+                  class="social-icon"
+                  href="https://www.facebook.com/unika.art.decor/"
+                  ><img
+                    src="./img/fb-icon.png"
+                    alt="Facebook"
+                    width="35"
+                    height="35"
+                /></a>
+              </li>
+              <li class="cotacts-footer-item">
+                <a
+                  class="social-icon"
+                  href="https://www.etsy.com/shop/UnikaInteriorDecor?ref=seller-platform-mcnav"
+                >
+                  <img src="./img/etsy.png" alt="Etsy" width="35" height="35"
+                /></a>
+              </li>
+            </ul>
           </div>
-
-          <div>
-            <input
-              type="text"
-              id="address"
-              placeholder="Адреса для доставки, відділення Нової Пошти"
-              required
-            />
-          </div>
-          <div>
-            <textarea
-              id="comment"
-              rows="4"
-              maxlength="250"
-              placeholder="Додаткові побажання або коментар"
-            ></textarea>
-          </div>
-
-          <button type="submit">
-            Відправити заявку на збірку Вашого EPOXY ART BOX
-          </button>
-        </form>
+         
+          <p class="copyright">© Всі права захищено</p>
+        </div>
       </section>
     </main>
-    <footer>
-      <div class="contact-links">
-        <p>Виникли питання? <br />Зв'яжіться з нами!</p>
+    <!-- модальне вікно з конструктором -->
 
-        <div class="social-wrapper">
-          <a class="social-button" href="https://t.me/veronikanos">
-            <svg
-              class="icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm3.69 8.29-1.27 6.05c-.1.46-.37.57-.76.36l-2.1-1.55-1.01.98c-.11.12-.22.23-.45.23l.16-2.25 4.07-3.68c.18-.16-.04-.26-.27-.09l-5.04 3.17-2.17-.68c-.47-.15-.47-.48.1-.71l8.51-3.29c.4-.15.76.1.63.71z"
-              />
-            </svg>
-            Telegram
+   
+      <div class="modal-constructor" id="modal">
+        <section class="hero">
+          <button type="button" class="btn-back" id="back">
+            &larr;&nbsp;&nbsp; На головну
+          </button>
+          <a class="logo" href="#">
+            <img src="./img/pictures/logo.png" alt="logo" />
           </a>
-          <a class="social-button" href="https://www.instagram.com/unika.art">
-            <svg
-              class="icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M7.75 2h8.5C19.65 2 22 4.35 22 7.75v8.5c0 3.4-2.35 5.75-5.75 5.75h-8.5C4.35 22 2 19.65 2 16.25v-8.5C2 4.35 4.35 2 7.75 2zm6.31 2h-4.12c-.58 0-1.15.02-1.72.11-.56.09-1.04.3-1.51.64-.47.34-.83.8-1.09 1.3-.26.5-.4 1.03-.49 1.59-.09.57-.1 1.14-.1 1.71v4.12c0 .57.01 1.14.1 1.71.09.56.23 1.09.49 1.59.26.5.62.96 1.09 1.3.47.34.95.55 1.51.64.57.09 1.14.11 1.72.11h4.12c.57 0 1.14-.02 1.71-.11.56-.09 1.04-.3 1.51-.64.47-.34.83-.8 1.09-1.3.26-.5.4-1.03.49-1.59.09-.57.1-1.14.1-1.71v-4.12c0-.57-.01-1.14-.1-1.71-.09-.56-.23-1.09-.49-1.59-.26-.5-.62-.96-1.09-1.3-.47-.34-.95-.55-1.51-.64-.57-.09-1.14-.11-1.71-.11zM12 7c1.39 0 2.52 1.13 2.52 2.52S13.39 12 12 12s-2.52-1.13-2.52-2.52S10.61 7 12 7zm4.79-.25c.48 0 .87.39.87.87 0 .48-.39.87-.87.87s-.87-.39-.87-.87c0-.48.39-.87.87-.87z"
-              />
-            </svg>
-            Instagram
-          </a>
-        </div>
-      </div>
-    </footer>
-    <!-- Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="modal-message"></div>
-        <div class="contact-links">
-          <p>Виникли питання? <br />Зв'яжіться з нами!</p>
+          
 
-          <div class="social-wrapper">
-            <a class="social-button" href="https://t.me/veronikanos">
-              <svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+          <h1 class="title">КОНСТРУКТОР<span>наборів для творчості</span></h1>
+          <p class="title-description">
+            персоналізуйте арт-бокс, обравши кольори та сухоцвіти які вам
+            найбільше до вподоби!
+          </p>
+          <img
+            class="art-box-img"
+            src="./img/pictures/art-box.png"
+            alt="art-box"
+          />
+        </section>
+        <section class="main-section">
+          
+          <h2>Виберіть комплектацію свого артбоксу</h2>
+
+          <form id="artboxForm" onsubmit="return validateForm(event)">
+            <div class="base-colors__wrapper">
+              <p>
+                До кожного набору входять два базові кольори - білий барвник та
+                білий перламутровий сухий пігмент.
+              </p>
+
+              <img
+                class="base-colors"
+                src="./img/pictures/base-colors.png"
+                alt="барвники"
+              />
+            </div>
+            <fieldset id="colorGroup">
+              <h3>Оберіть додаткові барвники:</h3>
+              <p class="disclaimer">
+                *Просимо звернути увагу: колір може відрізнятись в залежності
+                від освітлення та налаштувань екрану Вашого пристрою
+              </p>
+              <div class="table-wrapper">
+                <label>
+                  <input type="radio" name="color" value="Бірюзовий океан" />
+                  <div class="">
+                    <p class="color-description-text">Бірюзовий океан</p>
+                    <div class="color-wrapper color-ocean-dark"></div>
+                    <div class="color-wrapper color-ocean-light"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Бежевий латте" />
+                  <div class="">
+                    <p class="color-description-text">Бежевий латте</p>
+                    <div class="color-wrapper color-beige-dark"></div>
+                    <div class="color-wrapper color-beige-light"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Фіолет-аметист" />
+                  <div class="">
+                    <p class="color-description-text">Фіолет-аметист</p>
+                    <div class="color-wrapper color-violet-dark"></div>
+                    <div class="color-wrapper color-violet-light"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Рожевий-фуксія" />
+                  <div class="">
+                    <p class="color-description-text">Рожевий-фуксія</p>
+                    <div class="color-wrapper color-pink-light"></div>
+                    <div class="color-wrapper color-pink-dark"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Норвежський ліс" />
+                  <div class="">
+                    <p class="color-description-text">Норвежський ліс</p>
+                    <div class="color-wrapper color-green-dark"></div>
+                    <div class="color-wrapper color-green-light"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Пастельний" />
+                  <div class="">
+                    <p class="color-description-text">Пастельний</p>
+                    <div class="color-wrapper color-pastel-dark"></div>
+                    <div class="color-wrapper color-pastel-light"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Червоно-чорний" />
+                  <div class="">
+                    <p class="color-description-text">Червоно-чорний</p>
+                    <div class="color-wrapper color-red"></div>
+                    <div class="color-wrapper color-black"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Патріотичний" />
+                  <div class="">
+                    <p class="color-description-text">Патріотичний</p>
+                    <div class="color-wrapper color-patriotic-blue"></div>
+                    <div class="color-wrapper color-patriotic-yellow"></div>
+                  </div>
+                </label>
+                <label>
+                  <input type="radio" name="color" value="Пастельний" />
+                  <div class="">
+                    <p class="color-description-text">Апельсин-інжир</p>
+                    <div class="color-wrapper color-orange"></div>
+                    <div class="color-wrapper color-fig"></div>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset id="gloveSizeGroup">
+              <h3>Оберіть розмір рукавиць:</h3>
+              <label>
+                <input type="radio" name="glove_size" value="S" />
+                <p>S</p>
+              </label>
+              <label>
+                <input type="radio" name="glove_size" value="M" />
+                <p>M</p>
+              </label>
+              <label>
+                <input type="radio" name="glove_size" value="L" />
+                <p>L</p>
+              </label>
+              <label>
+                <input type="radio" name="glove_size" value="XL" />
+                <p>XL</p>
+              </label>
+            </fieldset>
+
+            <fieldset id="flowersGroup">
+              <h3>Оберіть вид сухоцвітів:</h3>
+              <p class="disclaimer">
+                *До всіх наборів входять квіточки зеленої гортензії
+              </p>
+              <div class="table-wrapper">
+                <label>
+                  <input type="radio" name="flower-type" value="Блакитні" />
+                  <img src="./img/pictures/1.png" alt="blue flowers" />
+                  <p>Блакитні</p>
+                </label>
+                <label>
+                  <input type="radio" name="flower-type" value="Фіолетові" />
+                  <img src="./img/pictures/2.png" alt="violet flowers" />
+                  <p>Фіолетові</p>
+                </label>
+                <label>
+                  <input type="radio" name="flower-type" value="Віоли" />
+                  <img src="./img/pictures/3.png" alt="viola mix" />
+                  <p>Мікс віол</p>
+                </label>
+                <label>
+                  <input type="radio" name="flower-type" value="Зелені" />
+                  <img src="./img/pictures/4.png" alt="green flowers" />
+                  <p>Зелені</p>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="flower-type"
+                    value="Рожево-бежеві"
+                  />
+                  <img src="./img/pictures/5.png" alt="pink-beige flowers" />
+                  <p>Рожево-бежеві</p>
+                </label>
+              </div>
+            </fieldset>
+
+            <div>
+              <input type="text" id="name" placeholder="Ваше ім'я" required />
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Ваш номер телефону"
+                required
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                id="address"
+                placeholder="Адреса для доставки, відділення Нової Пошти"
+                required
+              />
+            </div>
+            <div>
+              <textarea
+                id="comment"
+                rows="4"
+                maxlength="250"
+                placeholder="Додаткові побажання або коментар"
+              ></textarea>
+            </div>
+
+            <button type="submit">
+              Відправити заявку на збірку Вашого EPOXY ART BOX
+            </button>
+          </form>
+        </section>
+
+        <footer>
+          <div class="contact-links">
+            <p>Виникли питання? <br />Зв'яжіться з нами!</p>
+
+            <div class="social-wrapper">
+              <a class="social-button" href="https://t.me/veronikanos">
+                <svg
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm3.69 8.29-1.27 6.05c-.1.46-.37.57-.76.36l-2.1-1.55-1.01.98c-.11.12-.22.23-.45.23l.16-2.25 4.07-3.68c.18-.16-.04-.26-.27-.09l-5.04 3.17-2.17-.68c-.47-.15-.47-.48.1-.71l8.51-3.29c.4-.15.76.1.63.71z"
+                  />
+                </svg>
+                Telegram
+              </a>
+              <a
+                class="social-button"
+                href="https://www.instagram.com/unika.art"
               >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm3.69 8.29-1.27 6.05c-.1.46-.37.57-.76.36l-2.1-1.55-1.01.98c-.11.12-.22.23-.45.23l.16-2.25 4.07-3.68c.18-.16-.04-.26-.27-.09l-5.04 3.17-2.17-.68c-.47-.15-.47-.48.1-.71l8.51-3.29c.4-.15.76.1.63.71z"
-                />
-              </svg>
-              Telegram
-            </a>
-            <a class="social-button" href="https://www.instagram.com/unika.art">
-              <svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M7.75 2h8.5C19.65 2 22 4.35 22 7.75v8.5c0 3.4-2.35 5.75-5.75 5.75h-8.5C4.35 22 2 19.65 2 16.25v-8.5C2 4.35 4.35 2 7.75 2zm6.31 2h-4.12c-.58 0-1.15.02-1.72.11-.56.09-1.04.3-1.51.64-.47.34-.83.8-1.09 1.3-.26.5-.4 1.03-.49 1.59-.09.57-.1 1.14-.1 1.71v4.12c0 .57.01 1.14.1 1.71.09.56.23 1.09.49 1.59.26.5.62.96 1.09 1.3.47.34.95.55 1.51.64.57.09 1.14.11 1.72.11h4.12c.57 0 1.14-.02 1.71-.11.56-.09 1.04-.3 1.51-.64.47-.34.83-.8 1.09-1.3.26-.5.4-1.03.49-1.59.09-.57.1-1.14.1-1.71v-4.12c0-.57-.01-1.14-.1-1.71-.09-.56-.23-1.09-.49-1.59-.26-.5-.62-.96-1.09-1.3-.47-.34-.95-.55-1.51-.64-.57-.09-1.14-.11-1.71-.11zM12 7c1.39 0 2.52 1.13 2.52 2.52S13.39 12 12 12s-2.52-1.13-2.52-2.52S10.61 7 12 7zm4.79-.25c.48 0 .87.39.87.87 0 .48-.39.87-.87.87s-.87-.39-.87-.87c0-.48.39-.87.87-.87z"
-                />
-              </svg>
-              Instagram
-            </a>
+                <svg
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M7.75 2h8.5C19.65 2 22 4.35 22 7.75v8.5c0 3.4-2.35 5.75-5.75 5.75h-8.5C4.35 22 2 19.65 2 16.25v-8.5C2 4.35 4.35 2 7.75 2zm6.31 2h-4.12c-.58 0-1.15.02-1.72.11-.56.09-1.04.3-1.51.64-.47.34-.83.8-1.09 1.3-.26.5-.4 1.03-.49 1.59-.09.57-.1 1.14-.1 1.71v4.12c0 .57.01 1.14.1 1.71.09.56.23 1.09.49 1.59.26.5.62.96 1.09 1.3.47.34.95.55 1.51.64.57.09 1.14.11 1.72.11h4.12c.57 0 1.14-.02 1.71-.11.56-.09 1.04-.3 1.51-.64.47-.34.83-.8 1.09-1.3.26-.5.4-1.03.49-1.59.09-.57.1-1.14.1-1.71v-4.12c0-.57-.01-1.14-.1-1.71-.09-.56-.23-1.09-.49-1.59-.26-.5-.62-.96-1.09-1.3-.47-.34-.95-.55-1.51-.64-.57-.09-1.14-.11-1.71-.11zM12 7c1.39 0 2.52 1.13 2.52 2.52S13.39 12 12 12s-2.52-1.13-2.52-2.52S10.61 7 12 7zm4.79-.25c.48 0 .87.39.87.87 0 .48-.39.87-.87.87s-.87-.39-.87-.87c0-.48.39-.87.87-.87z"
+                  />
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </footer>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-message"></div>
+            <div class="contact-links">
+              <p>Виникли питання? <br />Зв'яжіться з нами!</p>
+
+              <div class="social-wrapper">
+                <a class="social-button" href="https://t.me/veronikanos">
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm3.69 8.29-1.27 6.05c-.1.46-.37.57-.76.36l-2.1-1.55-1.01.98c-.11.12-.22.23-.45.23l.16-2.25 4.07-3.68c.18-.16-.04-.26-.27-.09l-5.04 3.17-2.17-.68c-.47-.15-.47-.48.1-.71l8.51-3.29c.4-.15.76.1.63.71z"
+                    />
+                  </svg>
+                  Telegram
+                </a>
+                <a
+                  class="social-button"
+                  href="https://www.instagram.com/unika.art"
+                >
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M7.75 2h8.5C19.65 2 22 4.35 22 7.75v8.5c0 3.4-2.35 5.75-5.75 5.75h-8.5C4.35 22 2 19.65 2 16.25v-8.5C2 4.35 4.35 2 7.75 2zm6.31 2h-4.12c-.58 0-1.15.02-1.72.11-.56.09-1.04.3-1.51.64-.47.34-.83.8-1.09 1.3-.26.5-.4 1.03-.49 1.59-.09.57-.1 1.14-.1 1.71v4.12c0 .57.01 1.14.1 1.71.09.56.23 1.09.49 1.59.26.5.62.96 1.09 1.3.47.34.95.55 1.51.64.57.09 1.14.11 1.72.11h4.12c.57 0 1.14-.02 1.71-.11.56-.09 1.04-.3 1.51-.64.47-.34.83-.8 1.09-1.3.26-.5.4-1.03.49-1.59.09-.57.1-1.14.1-1.71v-4.12c0-.57-.01-1.14-.1-1.71-.09-.56-.23-1.09-.49-1.59-.26-.5-.62-.96-1.09-1.3-.47-.34-.95-.55-1.51-.64-.57-.09-1.14-.11-1.71-.11zM12 7c1.39 0 2.52 1.13 2.52 2.52S13.39 12 12 12s-2.52-1.13-2.52-2.52S10.61 7 12 7zm4.79-.25c.48 0 .87.39.87.87 0 .48-.39.87-.87.87s-.87-.39-.87-.87c0-.48.39-.87.87-.87z"
+                    />
+                  </svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <script src="./script.js"></script>
+    
+    <!-- top button -->
+    <a href="#" class="top-btn" aria-label="to top button"> &uarr; </a>
+    
+    <script src="./js/modal-constructor.js"></script>
+    <script src="./js/constructor.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/top.js"></script>
   </body>
 </html>
